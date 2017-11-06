@@ -1,9 +1,9 @@
-///////////////////////////////////////////////////////////
-//   UART Task v1.0                                      //
-//   ==============                                      //
-//   Copyright© 2017 by Felix Knobl, FH Technikum Wien   //
-//   Partial codeparts by Martin Horauer                 //
-///////////////////////////////////////////////////////////
+UART Task v1.0
+--------------
+Copyright© 2017 by Felix Knobl, FH Technikum Wien
+Partial codeparts by Martin Horauer
+
+--------------------------------
 
 Based on the XMC4500 Interface Example realized a small communication protocol that follows a bi-directional frame-based protocol pattern relying entirely on ASCII characters.
 
