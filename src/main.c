@@ -45,8 +45,8 @@
 
 
    UART communication via USB-to-Serial cable
-   UART_TX P1_5 -> CABLE_RX
-   UART_RX P1_4 -> CABLE_TX
+   UART_TX P1_5 -> CABLE_RX (WHITE)
+   UART_RX P1_4 -> CABLE_TX (GREEN)
 
    History <br>
 
@@ -85,6 +85,10 @@ int main (void)
 
 		// Get buffer from UART
 		_uart_get_string (rx_buff);
+
+		#if defined DEBUG
+			_uart_printf("INFO: User input: '%s'\r\n", rx_buff);
+		#endif
 
 		// Check min length, '#' and ','
 		if (strlen(rx_buff) < 5 || rx_buff[0] != '#' || rx_buff[2] != ',')
@@ -145,6 +149,8 @@ int main (void)
 
 				if (toNumber < fromNumber)
 				{
+					_uart_printf ("NACK\n");
+
 					#if defined DEBUG
 						_uart_printf ("ERROR: toNumber < fromNumber\r\n");
 					#endif
